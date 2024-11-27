@@ -1,0 +1,9 @@
+@for (p of posts; track $index) {
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">{{ p.title }}</h5>
+    <h6 class="card-subtitle">{{ p.author }}</h6>
+    <p class="card-text">{{ p.body }}</p>
+  </div>
+</div>
+}
