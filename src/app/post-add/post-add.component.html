@@ -1,1 +1,56 @@
-<p>post-add works!</p>
+<form (ngSubmit)="salvaPost()" #form="ngForm">
+  <div class="mb-3">
+    <label for="title" class="form-label">Titolo</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      placeholder="Titolo"
+      [(ngModel)]="model.title"
+      [required]="true"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="author" class="form-label">Autore</label>
+    <input
+      type="text"
+      class="form-control"
+      id="author"
+      name="author"
+      placeholder="Autore"
+      [(ngModel)]="model.author"
+      [required]="true"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Testo</label>
+    <textarea
+      rows="5"
+      class="form-control"
+      id="body"
+      name="body"
+      [(ngModel)]="model.body"
+      [required]="true"
+    ></textarea>
+  </div>
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="hidden"
+      name="hidden"
+      [(ngModel)]="model.hidden"
+    />
+    <label for="hidden" class="form-check-label">Nascosto</label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    Salva
+  </button>
+</form>
+@if (errorMessage) {
+<div class="alert alert-danger">{{ errorMessage }}</div>
+}
+<!-- <pre>
+  {{ model | json }}
+</pre> -->

@@ -6,3 +6,10 @@ export type Post = {
   body: string
   hidden: boolean
 }
+
+export type PostDTO = {
+  title: string,
+  author: string,
+  body: string,
+  hidden: boolean
+}
